@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=GBK">
+<title>D:\VSProjram\xlvip_backup\mfc_xunlei_vip\mfc_xunlei_vip\doc\软件说明文档.txt.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="none">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+<meta name="colorscheme" content="ron">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #00ffff; background-color: #000000; }
+body { font-family: monospace; color: #00ffff; background-color: #000000; }
+* { font-size: 1em; }
+.LineNr { color: #a9a9a9; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr"> 1 </span># mfc_xunlei_vip
+<span id="L2" class="LineNr"> 2 </span>   -----------------------------------------------------------------------------------------
+<span id="L3" class="LineNr"> 3 </span>                                      迅雷VIP账号密码自动获取工具说明
+<span id="L4" class="LineNr"> 4 </span>   -----------------------------------------------------------------------------------------
+<span id="L5" class="LineNr"> 5 </span>
+<span id="L6" class="LineNr"> 6 </span>            工具简介:本工具可以获取最新的迅雷VIP账号和密码---当天的或者前一天的.
+<span id="L7" class="LineNr"> 7 </span>        另外提供了一个免T dll,防止在使用的过程中被卡掉.
+<span id="L8" class="LineNr"> 8 </span>
+<span id="L9" class="LineNr"> 9 </span>          1.工程目录说明:
+<span id="L10" class="LineNr">10 </span>          mfc_xunlei_vip\mfc_xunlei_vip\bin     可执行文件目录
+<span id="L11" class="LineNr">11 </span>          mfc_xunlei_vip\mfc_xunlei_vip         工程目录
+<span id="L12" class="LineNr">12 </span>          mfc_xunlei_vip\mfc_xunlei_vip\curl    curl库头文件
+<span id="L13" class="LineNr">13 </span>          mfc_xunlei_vip\mfc_xunlei_vip\lib     curl静态库
+<span id="L14" class="LineNr">14 </span>          mfc_xunlei_vip\mfc_xunlei_vip\ini     软件配置文件
+<span id="L15" class="LineNr">15 </span>          mfc_xunlei_vip\mfc_xunlei_vip\res     MFC资源
+<span id="L16" class="LineNr">16 </span>          mfc_xunlei_vip\mfc_xunlei_vip\doc     工具相关说明
+<span id="L17" class="LineNr">17 </span>          mfc_xunlei_vip\mfc_xunlei_vip\Debug   工程其他输出文件
+<span id="L18" class="LineNr">18 </span>          mfc_xunlei_vip\mfc_xunlei_vip\dll     提供一个免T破解DLL
+<span id="L19" class="LineNr">19 </span>                       -----&gt;注:对使用不当造成的任何损失,本人概不负责.
+<span id="L20" class="LineNr">20 </span>                       免Tdll使用:将DLL,覆盖迅雷安装目录program下面的同名文件即可
+<span id="L21" class="LineNr">21 </span>          2.使用说明:
+<span id="L22" class="LineNr">22 </span>          点击&quot;开始获取按钮&quot;------&gt;获取到VIP-----&gt;点击&quot;导出成文件&quot;按钮可以将账号导出成txt文件.
+<span id="L23" class="LineNr">23 </span>          #######-------&gt;本程序获取到的迅雷VIP账号和密码都是最新的(当天的或者前一天的).
+<span id="L24" class="LineNr">24 </span>          ****注意:在刚点击&quot;开始获取&quot;后需要稍微等几秒才能显示出获取结果,不要误以为程序失效了或者卡死了.
+<span id="L25" class="LineNr">25 </span>          3. ./ini/profile.ini文件:
+<span id="L26" class="LineNr">26 </span>          此文件为软件的配置文件,主要是正则表达式的配置,由于网页格式经常变化,所以写成配置文件定期更新,无需
+<span id="L27" class="LineNr">27 </span>          重新编译代码即可实现更新.只需要更改配置文件的内容即可.以下以注释形式说明个字段个键值的含义:
+<span id="L28" class="LineNr">28 </span>
+<span id="L29" class="LineNr">29 </span>             [MAIN_PAGE_URL]         网站主页段
+<span id="L30" class="LineNr">30 </span>             INDEX_URL=<a href="http://www.521xunlei.com">http://www.521xunlei.com</a>     网站主页URL
+<span id="L31" class="LineNr">31 </span>             [XL_VIP_URL]       迅雷VIP页面正则段
+<span id="L32" class="LineNr">32 </span>             VIP_URL=&lt;em&gt;%s&lt;/em&gt;.*&lt;/a&gt;&lt;/label&gt; &lt;a href=&quot;(.*\.html)   迅雷VIP页面正则表达式
+<span id="L33" class="LineNr">33 </span>             [REGEX]      提取字段
+<span id="L34" class="LineNr">34 </span>             REG=账号[ \t]*(\w+:\d).*\D+(\d+)[&lt;br /&gt;|&lt;/font&gt;&lt;br /&gt;]   用了获取VIP账号密码的正则表达式
+<span id="L35" class="LineNr">35 </span>
+<span id="L36" class="LineNr">36 </span>          注意:由于在.\mfc_xunlei_vip\ini目录路径不变,因此在执行程序时必须进入到.\mfc_xunlei_vip\bin目录执行,
+<span id="L37" class="LineNr">37 </span>          否则会获取失败.  ----&gt;如果非要把bin目录的可执行文件放置到桌面等其他地方,可以通过发送快捷方式的方法
+<span id="L38" class="LineNr">38 </span>          发送的桌面,桌面有个快捷方式即可.
+<span id="L39" class="LineNr">39 </span>          4.编译环境:
+<span id="L40" class="LineNr">40 </span>          Windows10+VS2015
+<span id="L41" class="LineNr">41 </span>   -----------------------------------------------------------------------------------------
+<span id="L42" class="LineNr">42 </span>       本程序仅供娱乐，请不要用作商业用途,如果喜欢迅雷,请购买VIP,享受更多私有服务.
+<span id="L43" class="LineNr">43 </span>       如果有程序问题，希望可以邮件联系。
+<span id="L44" class="LineNr">44 </span>   -----------------------------------------------------------------------------------------
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
