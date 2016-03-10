@@ -84,6 +84,7 @@ BEGIN_MESSAGE_MAP(Cmfc_xunlei_vipDlg, CDialogEx)
 //	ON_BN_CLICKED(IDC_BUTTON_QUITE, &Cmfc_xunlei_vipDlg::OnBnClickedButtonQuite)
 ON_BN_CLICKED(IDC_BUTTON_CPY_ACC, &Cmfc_xunlei_vipDlg::OnBnClickedButtonCpyAcc)
 ON_BN_CLICKED(IDC_BUTTON_CPY_PWD, &Cmfc_xunlei_vipDlg::OnBnClickedButtonCpyPwd)
+ON_WM_CTLCOLOR()
 END_MESSAGE_MAP()
 
 
@@ -365,4 +366,86 @@ void Cmfc_xunlei_vipDlg::OnBnClickedButtonCpyPwd()
 		SetClipboardData(CF_TEXT, hClip);  //将内存块放入剪切板资源管理中
 		CloseClipboard();  //关闭剪切板,释放剪切板资源的占用权
 	}
+}
+
+
+BOOL Cmfc_xunlei_vipDlg::PreTranslateMessage(MSG* pMsg)
+{
+	// TODO: 在此添加专用代码和/或调用基类
+	static bool m_ctrl_down = false;  //此函数第一次调用的时候初始化
+	int col = -1;  //选中行的列号
+	if (pMsg->message == WM_KEYDOWN)
+	{
+
+		switch (pMsg->wParam)
+		{
+			//VK_A - VK_Z are the same as ASCII 'A' - 'Z' (0x41 - 0x5A) 不区分大小写
+		case 'C':  //Ctrl + C
+			if (m_ctrl_down)
+			{
+				col = 0;  //账号列
+			}
+			break;
+		case 'F':
+			if (m_ctrl_down)
+			{
+				col = 1;  //密码列
+			}
+			break;
+		case VK_CONTROL:
+			m_ctrl_down = true; return TRUE;
+		default:
+			return TRUE;
+		}
+
+		//   复制账号或者密码
+		int cur_sel = m_list_ctrol.GetSelectionMark();
+		if (cur_sel == -1)
+		{
+			AfxMessageBox("请选中一行再复制!");
+			return false;
+		}
+		CString cpy;
+		cpy = m_list_ctrol.GetItemText(cur_sel, col);
+		HGLOBAL hClip;     //句柄变量分配内存块
+		CloseClipboard();  //关闭剪切板,释放剪切板资源的占用权
+		if (OpenClipboard())
+		{
+			EmptyClipboard();
+			hClip = GlobalAlloc(GMEM_MOVEABLE, cpy.GetLength() + 1);
+			char *buff;
+			buff = (char *)GlobalLock(hClip);  // 对内存块加锁
+			strcpy(buff, cpy);             //复制数据到内存块
+			GlobalUnlock(hClip);               //数据写入完毕,进行解锁
+			SetClipboardData(CF_TEXT, hClip);  //将内存块放入剪切板资源管理中
+			CloseClipboard();  //关闭剪切板,释放剪切板资源的占用权
+		}
+	}
+
+	if (pMsg->message == WM_KEYUP)
+	{
+		switch (pMsg->wParam)
+		{
+		case VK_CONTROL:
+			m_ctrl_down = false; return TRUE;
+		}
+	}
+	return CDialogEx::PreTranslateMessage(pMsg);
+
+}
+
+
+HBRUSH Cmfc_xunlei_vipDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+{
+	HBRUSH hbr = CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
+
+	// TODO:  在此更改 DC 的任何特性
+	switch (pWnd->GetDlgCtrlID())
+	{
+	   case IDC_STATIC_C:
+	   case IDC_STATIC_F:
+       pDC->SetTextColor(RGB(255, 0, 0));
+	}
+	// TODO:  如果默认的不是所需画笔，则返回另一个画笔
+	return hbr;
 }

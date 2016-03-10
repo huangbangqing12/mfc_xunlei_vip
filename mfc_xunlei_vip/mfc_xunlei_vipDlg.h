@@ -47,4 +47,6 @@ public:
 	static char xlvip_ini[3][256];  //程序初始化数据
 	afx_msg void OnBnClickedButtonCpyAcc();
 	afx_msg void OnBnClickedButtonCpyPwd();
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };
