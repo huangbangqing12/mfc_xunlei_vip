@@ -1,0 +1,69 @@
+﻿生成启动时间为 2016/3/11 11:12:09。
+     1>项目“D:\VSProjram\mfc_xunlei_vip\mfc_xunlei_vip\mfc_xunlei_vip.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yc"stdafx.h" /Fp"Release\mfc_xunlei_vip.pch" /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Release\mfc_xunlei_vip.pch" /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt mfc_xunlei_vip.cpp mfc_xunlei_vipDlg.cpp UrlFile.cpp
+         mfc_xunlei_vip.cpp
+         mfc_xunlei_vipDlg.cpp
+     1>mfc_xunlei_vipDlg.cpp(62): error C2664: “DWORD GetPrivateProfileStringW(LPCWSTR,LPCWSTR,LPCWSTR,LPWSTR,DWORD,LPCWSTR)”: 无法将参数 1 从“const char [14]”转换为“LPCWSTR”
+         mfc_xunlei_vipDlg.cpp(62): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>mfc_xunlei_vipDlg.cpp(65): error C2664: “DWORD GetPrivateProfileStringW(LPCWSTR,LPCWSTR,LPCWSTR,LPWSTR,DWORD,LPCWSTR)”: 无法将参数 1 从“const char [11]”转换为“LPCWSTR”
+         mfc_xunlei_vipDlg.cpp(65): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>mfc_xunlei_vipDlg.cpp(68): error C2664: “DWORD GetPrivateProfileStringW(LPCWSTR,LPCWSTR,LPCWSTR,LPWSTR,DWORD,LPCWSTR)”: 无法将参数 1 从“const char [6]”转换为“LPCWSTR”
+         mfc_xunlei_vipDlg.cpp(68): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>mfc_xunlei_vipDlg.cpp(126): error C2664: “int CListCtrl::InsertColumn(int,LPCTSTR,int,int,int)”: 无法将参数 2 从“const char [12]”转换为“LPCTSTR”
+         mfc_xunlei_vipDlg.cpp(126): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>mfc_xunlei_vipDlg.cpp(127): error C2664: “int CListCtrl::InsertColumn(int,LPCTSTR,int,int,int)”: 无法将参数 2 从“const char [5]”转换为“LPCTSTR”
+         mfc_xunlei_vipDlg.cpp(127): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>mfc_xunlei_vipDlg.cpp(259): error C2665: “AfxMessageBox”: 2 个重载中没有一个可以转换所有参数类型
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6544): note: 可能是“int AfxMessageBox(UINT,UINT,UINT)”
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6542): note: 或  “int AfxMessageBox(LPCTSTR,UINT,UINT)”
+         mfc_xunlei_vipDlg.cpp(259): note: 尝试匹配参数列表“(const char [20])”时
+     1>mfc_xunlei_vipDlg.cpp(267): error C2664: “int CListCtrl::InsertItem(UINT,int,LPCTSTR,UINT,UINT,int,LPARAM)”: 无法将参数 2 从“const char *”转换为“LPCTSTR”
+         mfc_xunlei_vipDlg.cpp(267): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>mfc_xunlei_vipDlg.cpp(268): error C2664: “BOOL CListCtrl::SetItemText(int,int,LPCTSTR)”: 无法将参数 3 从“const char *”转换为“LPCTSTR”
+         mfc_xunlei_vipDlg.cpp(268): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>mfc_xunlei_vipDlg.cpp(294): error C2665: “AfxMessageBox”: 2 个重载中没有一个可以转换所有参数类型
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6544): note: 可能是“int AfxMessageBox(UINT,UINT,UINT)”
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6542): note: 或  “int AfxMessageBox(LPCTSTR,UINT,UINT)”
+         mfc_xunlei_vipDlg.cpp(294): note: 尝试匹配参数列表“(const char [27])”时
+     1>mfc_xunlei_vipDlg.cpp(297): error C2664: “CFileDialog::CFileDialog(const CFileDialog &)”: 无法将参数 2 从“const char [4]”转换为“LPCTSTR”
+         mfc_xunlei_vipDlg.cpp(297): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>mfc_xunlei_vipDlg.cpp(298): error C2440: “=”: 无法从“const char [25]”转换为“LPCWSTR”
+         mfc_xunlei_vipDlg.cpp(298): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>mfc_xunlei_vipDlg.cpp(299): error C2440: “=”: 无法从“const char [12]”转换为“LPCWSTR”
+         mfc_xunlei_vipDlg.cpp(299): note: 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>mfc_xunlei_vipDlg.cpp(304): error C2665: “AfxMessageBox”: 2 个重载中没有一个可以转换所有参数类型
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6544): note: 可能是“int AfxMessageBox(UINT,UINT,UINT)”
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6542): note: 或  “int AfxMessageBox(LPCTSTR,UINT,UINT)”
+         mfc_xunlei_vipDlg.cpp(304): note: 尝试匹配参数列表“(const char [23])”时
+     1>mfc_xunlei_vipDlg.cpp(314): error C2665: “AfxMessageBox”: 2 个重载中没有一个可以转换所有参数类型
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6544): note: 可能是“int AfxMessageBox(UINT,UINT,UINT)”
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6542): note: 或  “int AfxMessageBox(LPCTSTR,UINT,UINT)”
+         mfc_xunlei_vipDlg.cpp(314): note: 尝试匹配参数列表“(const char [9])”时
+     1>mfc_xunlei_vipDlg.cpp(325): error C2665: “AfxMessageBox”: 2 个重载中没有一个可以转换所有参数类型
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6544): note: 可能是“int AfxMessageBox(UINT,UINT,UINT)”
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6542): note: 或  “int AfxMessageBox(LPCTSTR,UINT,UINT)”
+         mfc_xunlei_vipDlg.cpp(325): note: 尝试匹配参数列表“(const char [18])”时
+     1>mfc_xunlei_vipDlg.cpp(338): error C2664: “char *strcpy(char *,const char *)”: 无法将参数 2 从“CString”转换为“const char *”
+         mfc_xunlei_vipDlg.cpp(338): note: 没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+     1>mfc_xunlei_vipDlg.cpp(352): error C2665: “AfxMessageBox”: 2 个重载中没有一个可以转换所有参数类型
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6544): note: 可能是“int AfxMessageBox(UINT,UINT,UINT)”
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6542): note: 或  “int AfxMessageBox(LPCTSTR,UINT,UINT)”
+         mfc_xunlei_vipDlg.cpp(352): note: 尝试匹配参数列表“(const char [18])”时
+     1>mfc_xunlei_vipDlg.cpp(365): error C2664: “char *strcpy(char *,const char *)”: 无法将参数 2 从“CString”转换为“const char *”
+         mfc_xunlei_vipDlg.cpp(365): note: 没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+     1>mfc_xunlei_vipDlg.cpp(406): error C2665: “AfxMessageBox”: 2 个重载中没有一个可以转换所有参数类型
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6544): note: 可能是“int AfxMessageBox(UINT,UINT,UINT)”
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afxwin.h(6542): note: 或  “int AfxMessageBox(LPCTSTR,UINT,UINT)”
+         mfc_xunlei_vipDlg.cpp(406): note: 尝试匹配参数列表“(const char [18])”时
+     1>mfc_xunlei_vipDlg.cpp(419): error C2664: “char *strcpy(char *,const char *)”: 无法将参数 2 从“CString”转换为“const char *”
+         mfc_xunlei_vipDlg.cpp(419): note: 没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+         UrlFile.cpp
+     1>UrlFile.cpp(14): fatal error C1083: 无法打开包括文件: “./curl/curl.h”: No such file or directory
+     1>已完成生成项目“D:\VSProjram\mfc_xunlei_vip\mfc_xunlei_vip\mfc_xunlei_vip.vcxproj”(Rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:05.25

@@ -85,6 +85,7 @@ BEGIN_MESSAGE_MAP(Cmfc_xunlei_vipDlg, CDialogEx)
 ON_BN_CLICKED(IDC_BUTTON_CPY_ACC, &Cmfc_xunlei_vipDlg::OnBnClickedButtonCpyAcc)
 ON_BN_CLICKED(IDC_BUTTON_CPY_PWD, &Cmfc_xunlei_vipDlg::OnBnClickedButtonCpyPwd)
 ON_WM_CTLCOLOR()
+ON_NOTIFY(NM_CUSTOMDRAW, IDC_LIST_ACCOUNT, &Cmfc_xunlei_vipDlg::OnCustomdrawListAccount)
 END_MESSAGE_MAP()
 
 
@@ -448,4 +449,70 @@ HBRUSH Cmfc_xunlei_vipDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	}
 	// TODO:  如果默认的不是所需画笔，则返回另一个画笔
 	return hbr;
+}
+
+
+void Cmfc_xunlei_vipDlg::OnCustomdrawListAccount(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	LPNMCUSTOMDRAW pNMCD = reinterpret_cast<LPNMCUSTOMDRAW>(pNMHDR);
+	// TODO: 在此添加控件通知处理程序代码
+	*pResult = 0;
+	//This code based on Michael Dunn's excellent article on
+	//list control custom draw at http://www.codeproject.com/listctrl/lvcustomdraw.asp
+
+	NMLVCUSTOMDRAW* pLVCD = reinterpret_cast<NMLVCUSTOMDRAW*>(pNMHDR);
+
+	// Take the default processing unless we set this to something else below.
+	*pResult = CDRF_DODEFAULT;
+	// First thing - check the draw stage. If it's the control's prepaint
+	// stage, then tell Windows we want messages for every item.
+	if (CDDS_PREPAINT == pLVCD->nmcd.dwDrawStage)
+	{
+		*pResult = CDRF_NOTIFYITEMDRAW;
+	}
+	else if (CDDS_ITEMPREPAINT == pLVCD->nmcd.dwDrawStage)
+	{
+		// This is the notification message for an item.  We'll request
+		// notifications before each subitem's prepaint stage.
+
+		*pResult = CDRF_NOTIFYSUBITEMDRAW;
+	}
+	else if ((CDDS_ITEMPREPAINT | CDDS_SUBITEM) == pLVCD->nmcd.dwDrawStage)
+	{
+
+		COLORREF clrNewTextColor, clrNewBkColor;
+
+		int    nItem = static_cast<int>(pLVCD->nmcd.dwItemSpec);
+
+		BOOL bSelect = FALSE;
+		POSITION pos = m_list_ctrol.GetFirstSelectedItemPosition();
+		while (pos)
+		{
+			int index = m_list_ctrol.GetNextSelectedItem(pos);
+			if (index == nItem)
+			{
+				bSelect = TRUE;
+				break;
+			}
+		}
+		if (bSelect)
+		{
+			//clrNewTextColor = RGB(255,0,0);     //Set the text to red
+			clrNewTextColor = RGB(0, 255, 0);     //Set the text to red
+			clrNewBkColor = RGB(0, 0, 255);     //Set the bkgrnd color to blue
+		}
+		else
+		{
+			clrNewTextColor = RGB(0, 0, 0);     //Leave the text black
+			clrNewBkColor = RGB(255, 255, 255);    //leave the bkgrnd color white
+		}
+
+		pLVCD->clrText = clrNewTextColor;
+		pLVCD->clrTextBk = clrNewBkColor;
+
+
+		// Tell Windows to paint the control itself.
+		*pResult = CDRF_DODEFAULT;
+
+	}
 }

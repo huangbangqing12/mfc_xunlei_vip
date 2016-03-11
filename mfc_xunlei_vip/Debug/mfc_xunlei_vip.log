@@ -1,7 +1,17 @@
-﻿生成启动时间为 2016/3/10 23:56:36。
-     1>项目“D:\VSProjram\mfc_xunlei_vip\mfc_xunlei_vip\mfc_xunlei_vip.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2016/3/11 11:12:28。
+     1>项目“D:\VSProjram\mfc_xunlei_vip\mfc_xunlei_vip\mfc_xunlei_vip.vcxproj”在节点 2 上(Rebuild 个目标)。
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-     1>ResourceCompile:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I. /I.\curl /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yc"stdafx.h" /Fp"Debug\mfc_xunlei_vip.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+         c:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\afx.h(33): note: 参见“MBCS_Support_Deprecated_In_MFC”的声明
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I. /I.\curl /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Debug\mfc_xunlei_vip.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt mfc_xunlei_vip.cpp mfc_xunlei_vipDlg.cpp UrlFile.cpp
+         UrlFile.cpp
+         mfc_xunlei_vipDlg.cpp
+         mfc_xunlei_vip.cpp
+         正在生成代码...
+       ResourceCompile:
          C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _DEBUG /l"0x0804" /IDebug\ /nologo /fo"Debug\mfc_xunlei_vip.res" mfc_xunlei_vip.rc 
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\bin\mfc_xunlei_vip.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\Include\Manifest\dpiaware.manifest" /Debug /PDB:".\bin\mfc_xunlei_vip.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\bin\mfc_xunlei_vip.lib" /MACHINE:X86 Debug\mfc_xunlei_vip.res
@@ -10,8 +20,8 @@
          Debug\stdafx.obj
          Debug\UrlFile.obj
          mfc_xunlei_vip.vcxproj -> D:\VSProjram\mfc_xunlei_vip\mfc_xunlei_vip\.\bin\mfc_xunlei_vip.exe
-     1>已完成生成项目“D:\VSProjram\mfc_xunlei_vip\mfc_xunlei_vip\mfc_xunlei_vip.vcxproj”(Build 个目标)的操作。
+     1>已完成生成项目“D:\VSProjram\mfc_xunlei_vip\mfc_xunlei_vip\mfc_xunlei_vip.vcxproj”(Rebuild 个目标)的操作。
 
 已成功生成。
 
-已用时间 00:00:01.84
+已用时间 00:00:13.49
